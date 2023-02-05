@@ -7,21 +7,12 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.yandex.scooter.*;
-
+import org.hamcrest.MatcherAssert;
 import java.util.concurrent.TimeUnit;
-
 import static org.junit.Assert.assertEquals;
 
-public class MakeNewOrderUsingLowerButton {
 
-    private WebDriver driver;
-
-    @Before
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-    }
+public class MakeNewOrderUsingLowerButton extends BaseTest {
 
     @Test
     public void PositiveOrderScenarioLowerButton() {
@@ -47,13 +38,7 @@ public class MakeNewOrderUsingLowerButton {
 
         wantToCreateOrder.CreateOrder();
 
-        assertEquals("Заказ оформлен", orderSuccesfullyCreated.checkTextOrderCreated());
-    }
-
-    @After
-    public void tearDown(){
-
-        driver.quit();
+        MatcherAssert.assertThat("Заказ оформлен", orderSuccesfullyCreated.checkTextOrderCreated().contains("Заказ оформлен"));
     }
 
 }

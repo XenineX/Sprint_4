@@ -12,8 +12,8 @@ public class MainPage {
     private ArrayList<By> buttonSelectors;
     private ArrayList<By> buttonAnswerSelectors;
     private By lastButtonSelector = By.id("accordion__heading-7");
-    private By upperOrderButton = By.xpath("html/body/div/div/div/div/div/button[@class='Button_Button__ra12g']");
-    private By lowerOrderButton = By.xpath("html/body/div/div/div/div/div/div/button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
+    private By upperOrderButton = By.xpath(".//div[@class='Header_Nav__AGCXC']/button[@class='Button_Button__ra12g']");
+    private By lowerOrderButton = By.className("Button_Middle__1CSJM");
 
     public MainPage(WebDriver driver){
         this.driver = driver;

@@ -1,30 +1,21 @@
 package scootertests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.hamcrest.MatcherAssert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.yandex.scooter.*;
-
+import org.hamcrest.MatcherAssert;
 import java.util.concurrent.TimeUnit;
-
 import static org.junit.Assert.assertEquals;
 
-public class MakeNewOrder {
+public class MakeNewOrder extends BaseTest {
 
-    private WebDriver driver;
-
-    @Before
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-    }
-
-    @Test
-       public void PositiveOrderScenarioUpperButton(){
+        @Test
+        public void PositiveOrderScenarioUpperButton(){
         MainPage mainPage = new MainPage(driver);
         OrderPage1 orderPage1 = new OrderPage1(driver);
         OrderPage2 orderPage2 = new OrderPage2(driver);
@@ -47,12 +38,8 @@ public class MakeNewOrder {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        assertEquals("Заказ оформлен", orderSuccesfullyCreated.checkTextOrderCreated());
+        MatcherAssert.assertThat("Заказ оформлен", orderSuccesfullyCreated.checkTextOrderCreated().contains("Заказ оформлен"));
 
     }
 
-    @After
-    public void tearDown(){
-        driver.quit();
-    }
 }

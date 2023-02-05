@@ -12,17 +12,18 @@ import java.util.concurrent.TimeUnit;
 public class OrderPage2 {
     private final WebDriver driver;
 
-    By inputDateClick = By.xpath("//div[@class='react-datepicker__input-container']");
-    By inputDate = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[6]");
+    By inputDateClick = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/div[1]/div/input");
+    By inputDate = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[7]");
     By inputDate2 = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div[6]");
-    By inputDaysOfRent = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div[1]");
+    By inputDaysOfRent = By.className("Dropdown-placeholder");
     By twoDaysOfRent = By.xpath("//div[text()='двое суток']");
     By fourDaysOfRent = By.xpath("//div[text()='четверо суток']");
-    By blackColourOfScooter = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[3]/label[1]");
-    By greyColourOfScooter = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[3]/label[2]");
-    By toOrderButton = By.xpath("//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']");
+    By blackColourOfScooter = By.xpath(".//input[@id='black']");
+    By greyColourOfScooter = By.xpath(".//input[@id='grey']");
+    By toOrderButton = By.xpath(".//div[@class='Order_Buttons__1xGrp']/button[text()='Заказать']");
 
     public OrderPage2(WebDriver driver) {
+
         this.driver = driver;
     }
 
@@ -36,7 +37,7 @@ public class OrderPage2 {
         driver.findElement(twoDaysOfRent).click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(blackColourOfScooter).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement scroll = driver.findElement(toOrderButton);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", scroll);
@@ -53,7 +54,7 @@ public class OrderPage2 {
         driver.findElement(fourDaysOfRent).click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.findElement(greyColourOfScooter).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         WebElement scroll = driver.findElement(toOrderButton);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", scroll);

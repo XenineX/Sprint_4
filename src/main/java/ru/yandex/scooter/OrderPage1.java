@@ -11,18 +11,17 @@ public class OrderPage1 {
 
     private final WebDriver driver;
 
-    private By inputName = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/input");
-    private By inputSurname = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/input");
-    private By inputAdress = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[3]/input");
-    private By inputMetro = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[4]/div/div/input");
-    private By inputTelefon = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[5]/input");
-    private By furtherButton = By.xpath("//*[@id=\"root\"]/div/div[2]/div[3]/button");
-
+    private By inputName = By.xpath(".//div[@class='Order_Content__bmtHS']//input[1]");
+    private By inputSurname = By.xpath(".//input[@placeholder='* Фамилия']");
+    private By inputAdress = By.xpath(".//input[@placeholder='* Адрес: куда привезти заказ']");
+    private By inputMetro = By.xpath(".//input[@placeholder='* Станция метро']");
+    private By inputTelefon = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
+    private By furtherButton = By.cssSelector(".Button_Button__ra12g.Button_Middle__1CSJM");
     private By metroName1 = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[4]/div/div[2]/ul/li[1]");
-
     private By metroName2 = By.xpath("//*[@id=\"root\"]/div/div[2]/div[2]/div[4]/div/div[2]/ul/li[2]");
 
     public OrderPage1(WebDriver driver) {
+
         this.driver = driver;
     }
 
