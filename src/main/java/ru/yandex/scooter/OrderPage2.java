@@ -27,7 +27,7 @@ public class OrderPage2 {
         this.driver = driver;
     }
 
-    public void FillRentInfo(){
+    public void fillRentInfo(){
 
         driver.findElement(inputDateClick).click();
         driver.findElement(inputDate).click();
@@ -45,7 +45,7 @@ public class OrderPage2 {
         driver.findElement(toOrderButton).click();
     }
 
-    public void FillRentInfo2Variant(){
+    public void fillRentInfo2Variant(){
         driver.findElement(inputDateClick).click();
         driver.findElement(inputDate2).click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

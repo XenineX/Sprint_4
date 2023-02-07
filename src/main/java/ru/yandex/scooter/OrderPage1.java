@@ -1,11 +1,7 @@
 package ru.yandex.scooter;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.util.concurrent.TimeUnit;
 
 public class OrderPage1 {
 
@@ -25,7 +21,7 @@ public class OrderPage1 {
         this.driver = driver;
     }
 
-    public void FillContactInfo(){
+    public void fillContactInfo(){
         driver.findElement(inputName).sendKeys("Билли");
         driver.findElement(inputSurname).sendKeys("Рубин");
         driver.findElement(inputAdress).sendKeys("Арбат 25");
@@ -36,7 +32,7 @@ public class OrderPage1 {
         driver.findElement(furtherButton).click();
     }
 
-    public void FillContactInfo2Varianto() {
+    public void fillContactInfo2Variant() {
         driver.findElement(inputName).sendKeys("Анна");
         driver.findElement(inputSurname).sendKeys("Каренина");
         driver.findElement(inputAdress).sendKeys("Вишневского 138");

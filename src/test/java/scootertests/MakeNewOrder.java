@@ -1,14 +1,9 @@
 package scootertests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.hamcrest.MatcherAssert;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import ru.yandex.scooter.*;
-import org.hamcrest.MatcherAssert;
+
 import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 
@@ -22,19 +17,19 @@ public class MakeNewOrder extends BaseTest {
         WantToCreateOrder wantToCreateOrder = new WantToCreateOrder(driver);
         OrderSuccesfullyCreated orderSuccesfullyCreated = new OrderSuccesfullyCreated(driver);
 
-        mainPage.ClickUpperOrderButton();
+        mainPage.clickUpperOrderButton();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
-        orderPage1.FillContactInfo();
+        orderPage1.fillContactInfo();
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        orderPage2.FillRentInfo();
+        orderPage2.fillRentInfo();
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        wantToCreateOrder.CreateOrder();
+        wantToCreateOrder.createOrder();
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 

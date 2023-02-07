@@ -14,7 +14,7 @@ public class WantToCreateOrder {
         this.driver = driver;
     }
 
-    public void CreateOrder(){
+    public void createOrder(){
 
         WebElement scroll = driver.findElement(yesButton);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", scroll);

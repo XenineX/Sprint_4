@@ -19,116 +19,132 @@ public class CheckDropDownListFAQ extends BaseTest {
 
 
     @Test
-    public void DoCheckList0() {
+    public void doCheckList0() {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.ScrollDown();
+        mainPage.scrollDown();
+
+        mainPage.findSelectors();
 
         String expected = "Сутки — 400 рублей. Оплата курьеру — наличными или картой.";
 
-        mainPage.ClickDropListButton(0);
+        mainPage.clickDropListButton(0);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        assertEquals(expected, mainPage.GetTextFromListButton(0));
-        mainPage.ScrollDown();
+        assertEquals(expected, mainPage.getTextFromListButton(0));
+        mainPage.scrollDown();
     }
 
     @Test
-    public void DoCheckList1() {
+    public void doCheckList1() {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.ScrollDown();
+        mainPage.scrollDown();
+
+        mainPage.findSelectors();
 
         String expected = "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.";
-        mainPage.ClickDropListButton(1);
+        mainPage.clickDropListButton(1);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        assertEquals(expected, mainPage.GetTextFromListButton(1));
-        mainPage.ScrollDown();
+        assertEquals(expected, mainPage.getTextFromListButton(1));
+        mainPage.scrollDown();
     }
 
     @Test
-    public void DoCheckList2() {
+    public void doCheckList2() {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.ScrollDown();
+        mainPage.scrollDown();
+
+        mainPage.findSelectors();
 
         String expected = "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30.";
-        mainPage.ClickDropListButton(2);
+        mainPage.clickDropListButton(2);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        assertEquals(expected, mainPage.GetTextFromListButton(2));
-        mainPage.ScrollDown();
+        assertEquals(expected, mainPage.getTextFromListButton(2));
+        mainPage.scrollDown();
     }
 
     @Test
-    public void DoCheckList3() {
+    public void doCheckList3() {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.ScrollDown();
+        mainPage.scrollDown();
+
+        mainPage.findSelectors();
 
         String expected = "Только начиная с завтрашнего дня. Но скоро станем расторопнее.";
-        mainPage.ClickDropListButton(3);
+        mainPage.clickDropListButton(3);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        assertEquals(expected, mainPage.GetTextFromListButton(3));
-        mainPage.ScrollDown();
+        assertEquals(expected, mainPage.getTextFromListButton(3));
+        mainPage.scrollDown();
     }
 
     @Test
-    public void DoCheckList4() {
+    public void doCheckList4() {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.ScrollDown();
+        mainPage.scrollDown();
+
+        mainPage.findSelectors();
 
         String expected = "Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по красивому номеру 1010.";
-        mainPage.ClickDropListButton(4);
+        mainPage.clickDropListButton(4);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        assertEquals(expected, mainPage.GetTextFromListButton(4));
-        mainPage.ScrollDown();
+        assertEquals(expected, mainPage.getTextFromListButton(4));
+        mainPage.scrollDown();
     }
 
     @Test
-    public void DoCheckList5() {
+    public void doCheckList5() {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.ScrollDown();
+        mainPage.scrollDown();
+
+        mainPage.findSelectors();
 
         String expected = "Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. Зарядка не понадобится.";
-        mainPage.ClickDropListButton(5);
+        mainPage.clickDropListButton(5);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        assertEquals(expected, mainPage.GetTextFromListButton(5));
-        mainPage.ScrollDown();
+        assertEquals(expected, mainPage.getTextFromListButton(5));
+        mainPage.scrollDown();
     }
 
     @Test
-    public void DoCheckList6() {
+    public void doCheckList6() {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.ScrollDown();
+        mainPage.scrollDown();
+
+        mainPage.findSelectors();
 
         String expected = "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.";
-        mainPage.ClickDropListButton(6);
+        mainPage.clickDropListButton(6);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        assertEquals(expected, mainPage.GetTextFromListButton(6));
-        mainPage.ScrollDown();
+        assertEquals(expected, mainPage.getTextFromListButton(6));
+        mainPage.scrollDown();
     }
 
     @Test
-    public void DoCheckList7() {
+    public void doCheckList7() {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.ScrollDown();
+        mainPage.scrollDown();
+
+        mainPage.findSelectors();
 
         String expected = "Да, обязательно. Всем самокатов! И Москве, и Московской области.";
-        mainPage.ClickDropListButton(7);
+        mainPage.clickDropListButton(7);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        assertEquals(expected, mainPage.GetTextFromListButton(7));
-        mainPage.ScrollDown();
+        assertEquals(expected, mainPage.getTextFromListButton(7));
+        mainPage.scrollDown();
     }
 
 }
